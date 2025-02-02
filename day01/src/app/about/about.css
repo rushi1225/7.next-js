@@ -1,0 +1,7 @@
+.about-menu{
+    display: flex;
+}
+
+.about-menu li{
+    margin-left: 20px;
+}
