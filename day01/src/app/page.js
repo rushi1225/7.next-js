@@ -22,10 +22,11 @@
 
 
 
-//state
+//state & components
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [name, setName] = useState('Rushi')    //default name rushi
@@ -48,10 +49,19 @@ export default function Home() {
         <h1>Events function & state </h1>
         <h1>using state hello {name} </h1>
         <button className="btn border-2 p-2" onClick={changeName}>Click me</button>
-          
+
       </div>
-          {/* inner components  */}
+      {/* inner components  */}
       <Innercomponent></Innercomponent>
+
+      {/* linking */}
+      <div>
+        <Link href='/'>Home</Link>
+        <br />
+        <Link href='/about'>About</Link>
+        <br />
+        <Link href='/contact'>Contact</Link>
+      </div>
     </>
   );
 }
