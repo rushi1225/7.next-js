@@ -1,3 +1,6 @@
+//fetch data using client components
+
+
 "use client"
 import { useState, useEffect } from 'react'
 
@@ -8,10 +11,9 @@ const ProductsPage = () => {
     useEffect(async () => {
         const req = await fetch("https://dummyjson.com/products");
         const res = await req.json();
+        const data = res.products;
 
-        const productdata = res.products;
-
-        setProducts(productdata)
+        setProducts(data)
     }, [])
 
     return (
