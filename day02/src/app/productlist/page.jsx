@@ -24,6 +24,7 @@ const ProductsPage = () => {
                     <>
                         <h1>Name: {item.title}</h1>
                         <h1>Name: {item.price}</h1>
+
                     </>
                 ))
             }
