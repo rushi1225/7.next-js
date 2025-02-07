@@ -3,14 +3,9 @@
 
 import { user } from "@/util/db";
 import { NextResponse } from "next/server";
-import { Result } from "postcss";
 
 
 export function GET() {
     const data = user;
     return NextResponse.json(data)
-}
-
-export function POST(req, res) {
-    return NextResponse.json({ Result: "hello post method" })
 }
