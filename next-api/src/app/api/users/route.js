@@ -3,7 +3,6 @@
 
 import { user } from "@/util/db";
 import { NextResponse } from "next/server";
-import { Result } from "postcss";
 
 
 export function GET() {
@@ -11,6 +10,13 @@ export function GET() {
     return NextResponse.json(data)
 }
 
-export function POST(req, res) {
-    return NextResponse.json({ Result: "hello post method" })
+export async function POST(req) {
+    const payload = await req.json();
+    console.log(payload.name)
+
+    if (!payload.name || !payload.age || !payload.email) {
+        return NextResponse.json({ Result: "require field is not found", success: false }, { status: 404 })
+
+    }
+    return NextResponse.json({ Result: "New user created", success: true }, { status: 201 })
 }
